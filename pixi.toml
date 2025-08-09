@@ -6,7 +6,14 @@ platforms = ["win-64"]
 version = "0.1.0"
 
 [tasks]
+test = "pytest **/*_test.py"
+lint = "ruff format && ruff check && ty check"
 
 [dependencies]
 ros-humble-ament-index-python = ">=1.4.0,<2"
 typer = ">=0.16.0,<0.17"
+pytest = ">=8.4.1,<9"
+ruff = ">=0.12.8,<0.13"
+
+[pypi-dependencies]
+ty = ">=0.0.1a17, <0.0.1a18"

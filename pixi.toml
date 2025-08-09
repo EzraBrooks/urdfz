@@ -7,7 +7,7 @@ version = "0.1.0"
 
 [tasks]
 test = "pytest **/*_test.py"
-lint = "ruff format && ruff check && ty check"
+lint = "ruff format --check && ruff check && ty check"
 
 [dependencies]
 ros-humble-ament-index-python = ">=1.4.0,<2"

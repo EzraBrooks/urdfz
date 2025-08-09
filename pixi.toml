@@ -1,0 +1,10 @@
+[workspace]
+authors = ["Ezra Brooks <ezra@brooks.cx>"]
+channels = ["conda-forge"]
+name = "urdfz"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]

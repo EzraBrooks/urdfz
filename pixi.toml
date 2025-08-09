@@ -1,6 +1,6 @@
 [workspace]
 authors = ["Ezra Brooks <ezra@brooks.cx>"]
-channels = ["conda-forge"]
+channels = ["conda-forge", "robostack-humble"]
 name = "urdfz"
 platforms = ["win-64"]
 version = "0.1.0"
@@ -8,3 +8,5 @@ version = "0.1.0"
 [tasks]
 
 [dependencies]
+ros-humble-ament-index-python = ">=1.4.0,<2"
+typer = ">=0.16.0,<0.17"

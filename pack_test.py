@@ -1,4 +1,4 @@
-from pack import read_file_to_str
+from pack import read_file_to_str, remap_filename_to_relative
 from unittest.mock import patch, mock_open
 from pathlib import Path
 
@@ -11,3 +11,15 @@ def test_read_file_to_str():
         path = Path("path/to/my/file2")
         assert read_file_to_str(path) == "data2"
         mock_file.assert_called_with(path, "r")
+
+
+def test_remap_filename_to_relative():
+    assert remap_filename_to_relative("package://ur_description/meshes/link1.stl") == (
+        Path.cwd() / "ur_description" / "meshes" / "link1.stl"
+    )
+    assert (
+        remap_filename_to_relative(
+            "file:///some/weird/place/on/my/disk/robot/link2.stl"
+        )
+        == Path.cwd() / "robot" / "link2.stl"
+    )

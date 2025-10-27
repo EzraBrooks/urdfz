@@ -14,12 +14,13 @@ def test_read_file_to_str():
 
 
 def test_remap_filename_to_relative():
-    assert remap_filename_to_relative("package://ur_description/meshes/link1.stl") == (
-        Path.cwd() / "ur_description" / "meshes" / "link1.stl"
+    assert (
+        remap_filename_to_relative("package://ur_description/meshes/link1.stl")
+        == Path("ur_description") / "meshes" / "link1.stl"
     )
     assert (
         remap_filename_to_relative(
             "file:///some/weird/place/on/my/disk/robot/link2.stl"
         )
-        == Path.cwd() / "robot" / "link2.stl"
+        == Path("robot") / "link2.stl"
     )

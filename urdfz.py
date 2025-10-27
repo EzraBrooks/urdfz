@@ -1,6 +1,8 @@
 import typer
 from typing_extensions import Annotated
 
+from pack import make_urdfz_file
+
 cli = typer.Typer()
 
 
@@ -9,7 +11,7 @@ def pack(
     path: Annotated[str, typer.Argument(help="The path to the URDF file to pack")],
 ):
     """Packs a URDF and all its assets into a URDFZ file."""
-    raise NotImplementedError()
+    make_urdfz_file(path)
 
 
 @cli.command()

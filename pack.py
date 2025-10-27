@@ -6,7 +6,7 @@ import shutil
 from ament_index_python.packages import get_package_share_directory  # pyright: ignore[reportMissingTypeStubs, reportUnknownVariableType]
 import os
 
-ET.register_namespace("", "http://www.ros.org")
+from urdf_utils import read_file_to_str, parse_urdf, get_meshes
 
 
 def make_urdfz_file(urdf_path: str):
@@ -32,23 +32,6 @@ def copy_assets_to_staging_directory(paths: list[str], staging_directory: Path):
             get_path_to_file(path),
             new_path,
         )
-
-
-def read_file_to_str(path: Path | str) -> str:
-    with open(path, "r") as f:
-        return f.read()
-
-
-def parse_urdf(raw_urdf: str) -> ET.Element:
-    return ET.fromstring(raw_urdf)
-
-
-def get_meshes(urdf: ET.Element) -> list[ET.Element]:
-    # A little ugly but it was a quick way to support URDFs that (correctly?) contain the ROS.org namespace and also ones that don't.
-    # Maybe we should validate and be opinionated though ;)
-    return urdf.findall(
-        ".//mesh", namespaces={"": "http://www.ros.org"}
-    ) + urdf.findall(".//mesh")
 
 
 def get_mesh_filenames(meshes: list[ET.Element]) -> list[str]:

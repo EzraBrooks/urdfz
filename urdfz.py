@@ -2,6 +2,7 @@ import typer
 from typing_extensions import Annotated
 
 from pack import make_urdfz_file
+from unpack import unpack_urdfz_file
 
 cli = typer.Typer()
 
@@ -16,10 +17,10 @@ def pack(
 
 @cli.command()
 def unpack(
-    path: Annotated[str, typer.Argument(help="The path to the URDFZ file to unpack")],  # pyright: ignore[reportUnusedParameter]
+    path: Annotated[str, typer.Argument(help="The path to the URDFZ file to unpack")],
 ):
     """Unpacks a URDFZ into its component URDF file and assets."""
-    raise NotImplementedError()
+    unpack_urdfz_file(path)
 
 
 if __name__ == "__main__":

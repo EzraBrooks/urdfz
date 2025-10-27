@@ -1,4 +1,5 @@
-from pack import read_file_to_str, remap_filename_to_relative
+from pack import remap_filename_to_relative
+from urdf_utils import read_file_to_str
 from unittest.mock import patch, mock_open
 from pathlib import Path
 

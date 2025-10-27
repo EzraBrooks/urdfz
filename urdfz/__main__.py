@@ -1,8 +1,8 @@
 import typer
 from typing_extensions import Annotated
 
-from pack import make_urdfz_file
-from unpack import unpack_urdfz_file
+from .pack import make_urdfz_file
+from .unpack import unpack_urdfz_file
 
 cli = typer.Typer()
 
@@ -23,5 +23,10 @@ def unpack(
     unpack_urdfz_file(path)
 
 
-if __name__ == "__main__":
+def main():
+    """Main entry point for the CLI."""
     cli()
+
+
+if __name__ == "__main__":
+    main()

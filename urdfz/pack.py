@@ -3,10 +3,18 @@ import xml.etree.ElementTree as ET
 from urllib.parse import urlparse
 import tempfile
 import shutil
-from ament_index_python.packages import get_package_share_directory  # pyright: ignore[reportMissingTypeStubs, reportUnknownVariableType]
 import os
 
-from urdf_utils import read_file_to_str, parse_urdf, get_meshes
+from .urdf_utils import read_file_to_str, parse_urdf, get_meshes
+
+try:
+    from ament_index_python.packages import get_package_share_directory  # pyright: ignore[reportMissingTypeStubs, reportUnknownVariableType]
+except ImportError:
+
+    def get_package_share_directory(package_name: str) -> str:
+        raise ImportError(
+            f"Cannot resolve 'package://{package_name}' URI - ament_index_python not available. To use package:// URIs, install ROS 2 and source the setup script, or use conda/mamba with robostack."
+        )
 
 
 def make_urdfz_file(urdf_path: str):

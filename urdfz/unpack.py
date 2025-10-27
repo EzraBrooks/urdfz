@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 from urllib.parse import urlparse
 import zipfile
 
-from urdf_utils import read_file_to_str, parse_urdf, get_meshes
+from .urdf_utils import read_file_to_str, parse_urdf, get_meshes
 
 
 def unpack_urdfz_file(urdfz_path: str | Path, output_dir: str | Path | None = None):

@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 from urllib.parse import urlparse
 import tempfile
 import shutil
-from ament_index_python.packages import get_package_share_directory
+from ament_index_python.packages import get_package_share_directory  # pyright: ignore[reportMissingTypeStubs, reportUnknownVariableType]
 import os
 
 ET.register_namespace("", "http://www.ros.org")

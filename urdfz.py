@@ -16,7 +16,7 @@ def pack(
 
 @cli.command()
 def unpack(
-    path: Annotated[str, typer.Argument(help="The path to the URDFZ file to unpack")],
+    path: Annotated[str, typer.Argument(help="The path to the URDFZ file to unpack")],  # pyright: ignore[reportUnusedParameter]
 ):
     """Unpacks a URDFZ into its component URDF file and assets."""
     raise NotImplementedError()

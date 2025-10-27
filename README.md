@@ -28,19 +28,14 @@ urdfz unpack path/to/robot.urdfz
 
 This will extract the URDF and all mesh files to the current directory.
 
-## Features
+## Things URDFZ aims to support
 
-- **Self-contained**: All mesh files and assets are bundled into a single archive
-- **Portable**: No external dependencies needed to view the contents (it's just a ZIP file)
-- **ROS Compatible**: Handles `package://` URIs when ROS is available
-- **File URI Support**: Also handles `file://` URIs
-- **Preserves Structure**: Maintains relative paths within the archive
+- All of the actual URDF standard as written.
 
-## URI Support
+## Things URDFZ will probably never support
 
-- `package://package_name/path/to/mesh.dae` - Requires ROS environment (you'll be prompted if missing)
-- `file:///absolute/path/to/mesh.dae` - Works anywhere
-- Relative paths are resolved relative to the URDF file location
+- xacro. it's not called xacroZ. To me it seems obvious that if you want to freeze your URDF in time, you should do it *after* generating it from xacro.
+  - This includes find-package expressions! We already have `package://`!
 
 ## Requirements
 

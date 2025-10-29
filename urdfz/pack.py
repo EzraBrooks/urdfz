@@ -5,16 +5,9 @@ import tempfile
 import shutil
 import os
 
+from resolve_robotics_uri_py import resolve_robotics_uri  # pyright: ignore[reportMissingTypeStubs]
+
 from .urdf_utils import read_file_to_str, parse_urdf, get_meshes
-
-try:
-    from ament_index_python.packages import get_package_share_directory  # pyright: ignore[reportMissingTypeStubs, reportUnknownVariableType]
-except ImportError:
-
-    def get_package_share_directory(package_name: str) -> str:
-        raise ImportError(
-            f"Cannot resolve 'package://{package_name}' URI - ament_index_python not available. To use package:// URIs, install ROS 2 and source the setup script, or use conda/mamba with robostack."
-        )
 
 
 def make_urdfz_file(urdf_path: Path):
@@ -44,7 +37,7 @@ def copy_assets_to_staging_directory(paths: list[str], staging_directory: Path):
         if not new_path.parent.exists():
             os.makedirs(new_path.parent)
         _ = shutil.copy(
-            get_path_to_file(path),
+            resolve_robotics_uri(path),
             new_path,
         )
 
@@ -58,18 +51,6 @@ def rewrite_mesh_filenames(meshes: list[ET.Element]):
     for mesh in meshes:
         mesh.attrib["filename"] = "urdfz://" + str(
             remap_filename_to_relative(mesh.attrib["filename"])
-        )
-
-
-def get_path_to_file(filename: str) -> Path:
-    url = urlparse(filename)
-    if url.scheme == "package":
-        return Path(get_package_share_directory(url.netloc)) / f".{url.path}"
-    elif url.scheme == "file":
-        return Path(url.netloc) / url.path
-    else:
-        raise NotImplementedError(
-            f"Found unsupported URDF filename URI scheme {url.scheme}!"
         )
 
 

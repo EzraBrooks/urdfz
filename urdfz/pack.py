@@ -17,14 +17,14 @@ except ImportError:
         )
 
 
-def make_urdfz_file(urdf_path: str):
+def make_urdfz_file(urdf_path: Path):
     urdf = parse_urdf(read_file_to_str(urdf_path))
     meshes = get_meshes(urdf)
     with tempfile.TemporaryDirectory() as staging_directory:
         staging_directory = Path(staging_directory)
         copy_assets_to_staging_directory(get_mesh_filenames(meshes), staging_directory)
         rewrite_mesh_filenames(meshes)
-        ET.ElementTree(urdf).write(staging_directory / Path(urdf_path).name)
+        ET.ElementTree(urdf).write(staging_directory / urdf_path.name)
         # Create a second temporary directory to hold the archive while it's still a ".zip" file before it gets renamed to ".urdfz" so we don't confuse ourselves by putting files into the directory we're compressing
         with tempfile.TemporaryDirectory() as archive_temporary_directory:
             archive_temporary_directory = Path(archive_temporary_directory)
@@ -34,7 +34,7 @@ def make_urdfz_file(urdf_path: str):
                     "zip",
                     staging_directory,
                 ),
-                Path(urdf_path).with_suffix(".urdfz"),
+                urdf_path.with_suffix(".urdfz"),
             )
 
 

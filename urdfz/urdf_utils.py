@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 ET.register_namespace("", "http://www.ros.org")
 
 
-def read_file_to_str(path: Path | str) -> str:
+def read_file_to_str(path: Path) -> str:
     """Read a file and return its contents as a string"""
     with open(path, "r") as f:
         return f.read()

@@ -2628,7 +2628,7 @@ packages:
 - pypi: ./
   name: urdfz
   version: 0.2.0
-  sha256: 816433653dcd2937874e6a10ad2ad4c990a789ddfd5378d764d906caaf4774ba
+  sha256: 72b9547479822fdeb42d5d68e92ab8d204784c97255fa235a2d962106dcee121
   requires_dist:
   - typer>=0.20.0,<0.21
   - resolve-robotics-uri-py>=0.3.1,<0.4.0

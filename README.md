@@ -30,7 +30,15 @@ This will extract the URDF and all mesh files to the current directory.
 
 ## How does it work?
 
-URDFZ treats your URDF as an archive manifest for your URDFZ archive. It looks up all the URIs listed in the URDF, resolves them to absolute paths, and copies them into the archive. It then creates a copy of your URDF that has its URIs rewritten to a `urdfz://` scheme that points to the asset's path within the archive, and places that modified URDF at the root of the archive.
+Upon packing, URDFZ treats your URDF as an archive manifest for your URDFZ archive.
+It looks up all the URIs listed in the URDF, resolves them to absolute paths, and copies them into the archive.
+It then creates a copy of your URDF that has its URIs rewritten to a `urdfz://` scheme that points to the asset's path within the archive, and places that modified URDF at the root of the archive.
+
+Upon unpacking, URDFZ unzips its archive and replaces the `urdfz://` URI scheme with the resulting absolute path on-disk after extraction.
+A side effect of this is that `urdfz pack` -> `urdfz unpack` can additionally be used as a way to sever your connection to upstream robot description packages, as the `package://` URLs are currently deliberately not persisted.
+If you've ever had an upstream description change break your production robot during a distro upgrade, you know what I'm talking about!
+
+
 
 ## Things URDFZ aims to support
 

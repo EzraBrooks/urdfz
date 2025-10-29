@@ -2614,8 +2614,8 @@ packages:
   timestamp: 1649177142878
 - pypi: ./
   name: urdfz
-  version: 0.1.1
-  sha256: 775fc6159867bd3747ea5761f500a5daf88ce0a83e2b404d953ac674512dee67
+  version: 0.1.2
+  sha256: fa62502710aec749a6dbb44d43464c1e642a168f9c9803858ab4a91260de1580
   requires_dist:
   - typer>=0.16.0,<0.17
   - pytest>=8.4.1,<9 ; extra == 'dev'

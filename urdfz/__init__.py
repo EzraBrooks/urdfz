@@ -8,5 +8,5 @@ their associated mesh files and assets in a single portable archive.
 from .pack import make_urdfz_file
 from .unpack import unpack_urdfz_file
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __all__ = ["make_urdfz_file", "unpack_urdfz_file", "__version__"]

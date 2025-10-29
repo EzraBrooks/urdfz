@@ -6,8 +6,8 @@ from pathlib import Path
 
 def test_read_file_to_str():
     with patch("builtins.open", mock_open(read_data="data")) as mock_file:  # pyright: ignore[reportAny]
-        assert read_file_to_str("path/to/my/file") == "data"
-        mock_file.assert_called_with("path/to/my/file", "r")  # pyright: ignore[reportAny]
+        assert read_file_to_str(Path("path/to/my/file")) == "data"
+        mock_file.assert_called_with(Path("path/to/my/file"), "r")  # pyright: ignore[reportAny]
     with patch("builtins.open", mock_open(read_data="data2")) as mock_file:  # pyright: ignore[reportAny]
         path = Path("path/to/my/file2")
         assert read_file_to_str(path) == "data2"

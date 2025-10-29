@@ -6,10 +6,8 @@ import zipfile
 from .urdf_utils import read_file_to_str, parse_urdf, get_meshes
 
 
-def unpack_urdfz_file(urdfz_path: str | Path, output_dir: str | Path | None = None):
+def unpack_urdfz_file(urdfz_path: Path, output_dir: Path | None = None):
     """Unpack a URDFZ file to a directory named after the URDFZ file"""
-    urdfz_path = Path(urdfz_path)
-
     # Create output directory based on URDFZ filename if not specified
     if output_dir is None:
         output_dir = Path(urdfz_path.stem)  # Remove .urdfz extension

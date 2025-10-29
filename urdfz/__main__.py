@@ -4,7 +4,7 @@ from typing_extensions import Annotated
 from .pack import make_urdfz_file
 from .unpack import unpack_urdfz_file
 
-cli = typer.Typer()
+cli = typer.Typer(no_args_is_help=True)
 
 
 @cli.command()

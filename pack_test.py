@@ -1,4 +1,4 @@
-from urdfz.pack import remap_filename_to_relative
+from urdfz.pack import create_urdfz_uri, remap_filename_to_relative
 from urdfz.urdf_utils import read_file_to_str
 from unittest.mock import patch, mock_open
 from pathlib import Path
@@ -24,4 +24,11 @@ def test_remap_filename_to_relative():
             "file:///some/weird/place/on/my/disk/robot/link2.stl"
         )
         == Path("robot") / "link2.stl"
+    )
+
+
+def test_create_urdfz_uri():
+    assert (
+        create_urdfz_uri("package://ur_description/meshes/link1.stl")
+        == "urdfz://ur_description/meshes/link1.stl"
     )

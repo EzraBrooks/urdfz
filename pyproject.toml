@@ -30,7 +30,7 @@ channels = ["conda-forge", "robostack-humble"]
 platforms = ["win-64", "linux-64", "linux-aarch64"]
 
 [tool.pixi.tasks]
-test = "pytest **/*_test.py"
+test = "pytest tests/"
 lint = "ruff format --check && ruff check && basedpyright ."
 
 [tool.pixi.dependencies]

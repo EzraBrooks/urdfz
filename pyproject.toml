@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "urdfz"
-version = "0.1.2"
+version = "0.2.0"
 authors = [
     {name = "Ezra Brooks", email = "ezra@brooks.cx"},
 ]
 description = "Self-contained, portable, actually UNIFIED Robot Description Files (URDFs)"
 dependencies = [
-    "typer>=0.16.0,<0.17",
+    "typer>=0.20.0,<0.21",
 ]
 
 [project.optional-dependencies]

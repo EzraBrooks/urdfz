@@ -21,14 +21,21 @@ def make_urdfz_file(urdf_path: str):
     urdf = parse_urdf(read_file_to_str(urdf_path))
     meshes = get_meshes(urdf)
     with tempfile.TemporaryDirectory() as staging_directory:
-        copy_assets_to_staging_directory(
-            get_mesh_filenames(meshes), Path(staging_directory)
-        )
+        staging_directory = Path(staging_directory)
+        copy_assets_to_staging_directory(get_mesh_filenames(meshes), staging_directory)
         rewrite_mesh_filenames(meshes)
-        ET.ElementTree(urdf).write(Path(staging_directory) / Path(urdf_path).name)
-        _ = shutil.move(
-            shutil.make_archive("test", "zip", Path(staging_directory)), "test.urdfz"
-        )
+        ET.ElementTree(urdf).write(staging_directory / Path(urdf_path).name)
+        # Create a second temporary directory to hold the archive while it's still a ".zip" file before it gets renamed to ".urdfz" so we don't confuse ourselves by putting files into the directory we're compressing
+        with tempfile.TemporaryDirectory() as archive_temporary_directory:
+            archive_temporary_directory = Path(archive_temporary_directory)
+            _ = shutil.move(
+                shutil.make_archive(
+                    str(archive_temporary_directory / "urdfz"),
+                    "zip",
+                    staging_directory,
+                ),
+                "test.urdfz",
+            )
 
 
 def copy_assets_to_staging_directory(paths: list[str], staging_directory: Path):

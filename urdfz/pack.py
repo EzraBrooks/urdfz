@@ -49,9 +49,11 @@ def get_mesh_filenames(meshes: list[ET.Element]) -> list[str]:
 
 def rewrite_mesh_filenames(meshes: list[ET.Element]):
     for mesh in meshes:
-        mesh.attrib["filename"] = "urdfz://" + str(
-            remap_filename_to_relative(mesh.attrib["filename"])
-        )
+        mesh.attrib["filename"] = create_urdfz_uri(mesh.attrib["filename"])
+
+
+def create_urdfz_uri(filename: str):
+    return "urdfz://" + remap_filename_to_relative(filename).as_posix()
 
 
 def remap_filename_to_relative(filename: str) -> Path:

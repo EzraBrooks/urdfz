@@ -34,7 +34,7 @@ def make_urdfz_file(urdf_path: str):
                     "zip",
                     staging_directory,
                 ),
-                "test.urdfz",
+                Path(urdf_path).with_suffix(".urdfz"),
             )
 
 

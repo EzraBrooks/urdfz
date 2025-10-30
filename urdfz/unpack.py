@@ -33,7 +33,7 @@ def unpack_urdfz_file(urdfz_path: Path, output_dir: Path | None = None):
     meshes = get_meshes(urdf)
 
     # Rewrite mesh filenames from urdfz:// to file:// URLs
-    rewrite_mesh_filenames_to_file_urls(meshes)
+    rewrite_mesh_filenames_to_file_urls(meshes, output_dir)
 
     # Write the modified URDF back to the same location
     ET.ElementTree(urdf).write(urdf_file, encoding="utf-8", xml_declaration=True)
@@ -41,14 +41,16 @@ def unpack_urdfz_file(urdfz_path: Path, output_dir: Path | None = None):
     print(f"Unpacked URDFZ to directory: {output_dir}/")
 
 
-def rewrite_mesh_filenames_to_file_urls(meshes: list[ET.Element]):
+def rewrite_mesh_filenames_to_file_urls(meshes: list[ET.Element], output_dir: Path):
     """Convert urdfz:// URLs back to file:// URLs pointing to local files"""
     for mesh in meshes:
         filename = mesh.attrib["filename"]
         url = urlparse(filename)
 
         if url.scheme == "urdfz":
-            relative_path = Path(url.netloc) / url.path[1:]  # Remove leading slash
+            relative_path = (
+                output_dir / url.netloc / url.path[1:]  # Remove leading slash
+            )
 
             # Use as_uri() to properly format the file URI for all platforms
             # Must resolve to absolute path first since relative paths can't be URIs

@@ -17,6 +17,8 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8.4.1,<9",
+    "pytest-cov>=6.0.0,<7",
+    "diff-cover>=9.0.0,<10",
     "ruff>=0.12.8,<0.13",
     "basedpyright>=1.32.1,<2",
     "build>=1.3.0,<2",
@@ -30,8 +32,9 @@ channels = ["conda-forge", "robostack-humble"]
 platforms = ["win-64", "linux-64", "linux-aarch64", "osx-arm64"]
 
 [tool.pixi.tasks]
-test = "pytest tests/"
+test = "pytest --cov=urdfz --cov-report=xml tests/"
 lint = "ruff format --check && ruff check && basedpyright ."
+coverage-diff = "diff-cover coverage.xml --fail-under=80"
 
 [tool.pixi.dependencies]
 ros-humble-turtlebot3-description = ">=2.3.1,<3"

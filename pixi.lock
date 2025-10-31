@@ -3322,8 +3322,8 @@ packages:
   timestamp: 1649177142878
 - pypi: ./
   name: urdfz
-  version: 0.2.0
-  sha256: 41bc997e07a905e7accd95ff906b210f4e1e632c7bfbb02d9da8a0e0cf1f6159
+  version: 0.2.1
+  sha256: dc896f848220ce485c0e85b320f984e3a3058a1409cb9884b97916e67da34daa
   requires_dist:
   - typer>=0.20.0,<0.21
   - resolve-robotics-uri-py>=0.3.1,<0.4.0

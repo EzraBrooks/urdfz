@@ -25,9 +25,9 @@ dev = [
 [project.scripts]
 urdfz = "urdfz.__main__:main"
 
-[tool.pixi.project]
+[tool.pixi.workspace]
 channels = ["conda-forge", "robostack-humble"]
-platforms = ["win-64", "linux-64", "linux-aarch64"]
+platforms = ["win-64", "linux-64", "linux-aarch64", "osx-arm64"]
 
 [tool.pixi.tasks]
 test = "pytest tests/"

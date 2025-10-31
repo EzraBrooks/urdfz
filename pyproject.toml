@@ -11,7 +11,7 @@ authors = [
 description = "Self-contained, portable, actually UNIFIED Robot Description Files (URDFs)"
 dependencies = [
     "typer>=0.20.0,<0.21",
-    "resolve-robotics-uri-py>=0.3.1,<0.4.0"
+    "resolve-robotics-uri-py>=0.4.1,<0.5.0"
 ]
 
 [project.optional-dependencies]

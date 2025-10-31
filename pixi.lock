@@ -77,7 +77,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/bd/24/12818598c362d7f300f18e74db45963dbcb85150324092410c8b49405e42/pyproject_hooks-1.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a8/a4/20da314d277121d6534b3a980b29035dcd51e6744bd79075a6ce8fa4eb8d/pytest-8.4.2-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/97/2c/d5c234ff2fd2b7668c7c710f638cb02214375475744d135b2cab572a0cd3/resolve_robotics_uri_py-0.3.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/7a/5d/b1bc2f3fac573174350634731d2c366fce9e0ad9b5d9763c726efd546669/resolve_robotics_uri_py-0.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/25/7a/b0178788f8dc6cafce37a212c99565fa1fe7872c70c6c9c1e1a372d9d88f/rich-14.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/53/06/8deb52d48a9a624fd37390555d9589e719eac568c020b27e96eed671f25f/ruff-0.12.12-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
@@ -153,7 +153,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/bd/24/12818598c362d7f300f18e74db45963dbcb85150324092410c8b49405e42/pyproject_hooks-1.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a8/a4/20da314d277121d6534b3a980b29035dcd51e6744bd79075a6ce8fa4eb8d/pytest-8.4.2-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/97/2c/d5c234ff2fd2b7668c7c710f638cb02214375475744d135b2cab572a0cd3/resolve_robotics_uri_py-0.3.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/7a/5d/b1bc2f3fac573174350634731d2c366fce9e0ad9b5d9763c726efd546669/resolve_robotics_uri_py-0.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/25/7a/b0178788f8dc6cafce37a212c99565fa1fe7872c70c6c9c1e1a372d9d88f/rich-14.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e9/03/6816b2ed08836be272e87107d905f0908be5b4a40c14bfc91043e76631b8/ruff-0.12.12-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
@@ -221,7 +221,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/bd/24/12818598c362d7f300f18e74db45963dbcb85150324092410c8b49405e42/pyproject_hooks-1.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a8/a4/20da314d277121d6534b3a980b29035dcd51e6744bd79075a6ce8fa4eb8d/pytest-8.4.2-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/97/2c/d5c234ff2fd2b7668c7c710f638cb02214375475744d135b2cab572a0cd3/resolve_robotics_uri_py-0.3.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/7a/5d/b1bc2f3fac573174350634731d2c366fce9e0ad9b5d9763c726efd546669/resolve_robotics_uri_py-0.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/25/7a/b0178788f8dc6cafce37a212c99565fa1fe7872c70c6c9c1e1a372d9d88f/rich-14.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e8/d2/9e3e40d399abc95336b1843f52fc0daaceb672d0e3c9290a28ff1a96f79d/ruff-0.12.12-py3-none-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
@@ -294,7 +294,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/bd/24/12818598c362d7f300f18e74db45963dbcb85150324092410c8b49405e42/pyproject_hooks-1.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a8/a4/20da314d277121d6534b3a980b29035dcd51e6744bd79075a6ce8fa4eb8d/pytest-8.4.2-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/97/2c/d5c234ff2fd2b7668c7c710f638cb02214375475744d135b2cab572a0cd3/resolve_robotics_uri_py-0.3.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/7a/5d/b1bc2f3fac573174350634731d2c366fce9e0ad9b5d9763c726efd546669/resolve_robotics_uri_py-0.4.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/25/7a/b0178788f8dc6cafce37a212c99565fa1fe7872c70c6c9c1e1a372d9d88f/rich-14.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/85/60/d1e335417804df452589271818749d061b22772b87efda88354cf35cdb7a/ruff-0.12.12-py3-none-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
@@ -1792,10 +1792,10 @@ packages:
   purls: []
   size: 252359
   timestamp: 1740379663071
-- pypi: https://files.pythonhosted.org/packages/97/2c/d5c234ff2fd2b7668c7c710f638cb02214375475744d135b2cab572a0cd3/resolve_robotics_uri_py-0.3.1-py3-none-any.whl
+- pypi: https://files.pythonhosted.org/packages/7a/5d/b1bc2f3fac573174350634731d2c366fce9e0ad9b5d9763c726efd546669/resolve_robotics_uri_py-0.4.1-py3-none-any.whl
   name: resolve-robotics-uri-py
-  version: 0.3.1
-  sha256: 1bcdce086f84a7455d2894fde34714fd3c178960fc2308ca476193ad22d61625
+  version: 0.4.1
+  sha256: b3c65acd02dce73f580a22d8911b3231466325f93ec784c8a11af4012c1f0b1b
   requires_dist:
   - black ; extra == 'style'
   - isort ; extra == 'style'
@@ -3323,10 +3323,10 @@ packages:
 - pypi: ./
   name: urdfz
   version: 0.2.1
-  sha256: dc896f848220ce485c0e85b320f984e3a3058a1409cb9884b97916e67da34daa
+  sha256: 41c74a735b21d62f30c9eb32cbd1beed706fbf05c98dad6f14564db7fa82a616
   requires_dist:
   - typer>=0.20.0,<0.21
-  - resolve-robotics-uri-py>=0.3.1,<0.4.0
+  - resolve-robotics-uri-py>=0.4.1,<0.5.0
   - pytest>=8.4.1,<9 ; extra == 'dev'
   - ruff>=0.12.8,<0.13 ; extra == 'dev'
   - basedpyright>=1.32.1,<2 ; extra == 'dev'

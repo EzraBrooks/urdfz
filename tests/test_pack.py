@@ -16,12 +16,14 @@ def test_read_file_to_str():
 
 def test_remap_filename_to_relative():
     assert (
-        remap_filename_to_relative("package://ur_description/meshes/link1.stl")
+        remap_filename_to_relative(
+            "package://ur_description/meshes/link1.stl", Path.cwd()
+        )
         == Path("ur_description") / "meshes" / "link1.stl"
     )
     assert (
         remap_filename_to_relative(
-            "file:///some/weird/place/on/my/disk/robot/link2.stl"
+            "file:///some/weird/place/on/my/disk/robot/link2.stl", Path.cwd()
         )
         == Path("robot") / "link2.stl"
     )
@@ -29,6 +31,6 @@ def test_remap_filename_to_relative():
 
 def test_create_urdfz_uri():
     assert (
-        create_urdfz_uri("package://ur_description/meshes/link1.stl")
+        create_urdfz_uri("package://ur_description/meshes/link1.stl", Path.cwd())
         == "urdfz://ur_description/meshes/link1.stl"
     )
